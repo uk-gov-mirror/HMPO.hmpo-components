@@ -1,0 +1,4 @@
+.govuk-tag--light-blue {
+    background-color: govuk-colour("blue", $variant: "tint-25");
+    color: govuk-colour("blue", $variant: "shade-50");
+}
