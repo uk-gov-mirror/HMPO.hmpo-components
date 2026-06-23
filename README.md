@@ -86,6 +86,33 @@ npm run build:js
 
 _For more options and troubleshooting, see the [Rollup documentation](https://rollupjs.org/) and plugin docs._
 
+## GOV.UK Frontend v6 Migration Notes
+
+### Version and Sass support
+
+- This package is validated against GOV.UK Frontend `6.x` (including `6.3.0`).
+- GOV.UK Frontend Sass entrypoint usage has been migrated to `@use` in project Sass checks.
+
+### Breaking change for template overrides (v6-only block API)
+
+`hmpo-template.njk` now exposes v6-native GOV.UK template block names only.
+
+- Use `govukSkipLink` (not `skipLink`)
+- Use `govukServiceNavigation` (not `govukServiceNav`)
+- Use `containerStart` (not `beforeContent`)
+
+If your service extends `hmpo-template.njk` and still overrides the legacy block names above, you must update those overrides.
+
+### Header option removal
+
+- GOV.UK Header option `useTudorCrown` is removed in GOV.UK Frontend v6 and must not be passed.
+
+### Colour migration and custom light-blue handling
+
+- Deprecated functional colour variables have been migrated to `govuk-functional-colour(...)` usage where applicable.
+- For task-list status tags, GOV.UK Frontend v6 removed built-in `govuk-tag--light-blue`.
+- To preserve existing downstream status configuration and appearance, this package now provides a custom `.govuk-tag--light-blue` style mapped to GOV.UK blue tint/shade values.
+
 ## Usage
 
 To use `hmpo-components` in your Express app, follow these steps:
