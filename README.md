@@ -107,12 +107,6 @@ If your service extends `hmpo-template.njk` and still overrides the legacy block
 
 - GOV.UK Header option `useTudorCrown` is removed in GOV.UK Frontend v6 and must not be passed.
 
-### Colour migration and custom light-blue handling
-
-- Deprecated functional colour variables have been migrated to `govuk-functional-colour(...)` usage where applicable.
-- For task-list status tags, GOV.UK Frontend v6 removed built-in `govuk-tag--light-blue`.
-- To preserve existing downstream status configuration and appearance, this package now provides a custom `.govuk-tag--light-blue` style mapped to GOV.UK blue tint/shade values.
-
 ## Usage
 
 To use `hmpo-components` in your Express app, follow these steps:
